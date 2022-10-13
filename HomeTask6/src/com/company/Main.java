@@ -10,8 +10,8 @@ public class Main {
         Crocodile cro = new Crocodile("Crocodile", "Reptiles", "River", "Animals");
         Crocodile cro2 = new Crocodile("Crocodile", "Reptiles", "Lake", "Fish");
 
-        Animal[] cats = {cat, cat2, cat3};
-        for(Animal a : cats){
+        Cat[] cats = {cat, cat2, cat3};
+        for(Cat a : cats){
             System.out.println(a);
         }
         cat.hunting("Mice");
@@ -28,6 +28,8 @@ public class Main {
         cro2.eat();
         cro.makeNoise();
         System.out.println(cro.equals(cro2));
+
+
 
     }
 }
