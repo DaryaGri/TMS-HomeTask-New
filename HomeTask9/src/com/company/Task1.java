@@ -9,7 +9,7 @@ public class Task1 {
     public static void main(String[] args) {
 
         String date = "15 июля 2016";
-        String[] arrayDate = date.split("\\s|,|!|\\.");
+        String[] arrayDate = date.split(" ");
 
         if (arrayDate[1].matches("[а-яёА-ЯЁ]+")) {
             arrayDate[1] = "07";

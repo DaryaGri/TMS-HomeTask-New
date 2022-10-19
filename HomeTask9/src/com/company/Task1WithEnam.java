@@ -11,9 +11,8 @@ public class Task1WithEnam {
 
         String[] arrayDate = date.split("\\s|,|!|\\.");
         if (arrayDate[1].matches("[а-яёА-ЯЁ]+")) {
-            String m = arrayDate[1].toUpperCase();
             for (Month month : Month.values()) {
-                if (month.name().equals(m)) {
+                if (month.name().equalsIgnoreCase(arrayDate[1])) {
                     System.out.printf("%s.%s.%s.", arrayDate[0], month.getNumbermonth(), arrayDate[2]);
                 }
             }
