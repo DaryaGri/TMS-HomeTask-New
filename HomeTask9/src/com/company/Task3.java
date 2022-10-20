@@ -1,22 +1,28 @@
 package com.company;
 
-public class Task3{
+public class Task3 {
 
     public static void main(String[] args) {
-        StringBuilder phoneNumber = new StringBuilder("+--375(29) 663-82-20");
-
+        String phoneNumber = "+--375(29) 663-82-20";
+        boolean checkPhone = true;
         for (int i = 0; i < phoneNumber.length(); i++) {
-            if (!checkPhoneNumber(phoneNumber.charAt(i))) {
+            if (checkPhoneNumber(phoneNumber.charAt(i))) {
+                checkPhone = true;
+            }else{
                 System.out.println("Invalid phone number!");
+                checkPhone = false;
                 break;
+            }
+        }
+        if(checkPhone) {
+            for (int j = 0; j < phoneNumber.length(); j++) {
+                if (!printNumber(phoneNumber.charAt(j))) {
+                    System.out.print(phoneNumber.charAt(j));
+                }
+            }
+        }
 
-            }
-        }
-        for (int j = 0; j < phoneNumber.length(); j++) {
-            if (checkPhoneNumber(phoneNumber.charAt(j))&&!printNumber(phoneNumber.charAt(j))) {
-                System.out.print(phoneNumber.charAt(j));
-            }
-        }
+
     }
 
     static char[] symbols = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '(', ')', ' '};
@@ -29,6 +35,7 @@ public class Task3{
         }
         return false;
     }
+
     static char[] symbols1 = {'-', '(', ')', ' '};
 
     private static boolean printNumber(char charAt) {
